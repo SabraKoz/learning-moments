@@ -104,6 +104,7 @@ section {
 }
 body {
   line-height: 1;
+  font-family: 'Trebuchet MS', sans-serif;
   background-color: rgb(3, 135, 187);
 }
 ol,
