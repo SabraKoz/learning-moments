@@ -16,6 +16,7 @@
 
   .navbar-link {
     text-decoration: none;
+    color: black;
     letter-spacing: 1px;
   }
 
@@ -24,5 +25,5 @@
   }
 
   .navbar-link:hover {
-    color: salmon;
+    text-shadow: 0 0 5px purple;
   }

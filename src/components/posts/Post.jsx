@@ -4,13 +4,13 @@ export const Post = ({ post }) => {
 
     return (
         <section className="post">
-            <header className="post-title">{post.title}</header>
+            <Link to={`/posts/${post.id}`} key={post.id} className="post-title-link" ><header className="post-title">{post.title}</header></Link>
             <footer>
-                <div className="post-topic">
-                    Topic: {post.topic.name}
+                <div className="topic">
+                    <span className="topic-title">Topic: </span>{post.topic.name}
                 </div>
-                <div className="post-likes">
-                    Likes: {post.userLikedPosts.length}
+                <div className="likes">
+                    <span className="likes-title">Likes: </span>{post.userLikedPosts.length}
                 </div>
             </footer>
         </section>

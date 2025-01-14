@@ -31,7 +31,20 @@
         font-size: 22px;
         font-weight: bold;
         padding: 10px;
+        color: black;
     }
+
+    .post-title-link {
+        text-decoration: none;
+    }
+
+    .post-title-link:hover {
+        text-shadow: 0 0 5px rgb(3, 135, 187);
+    }
+}
+
+.topic-title, .likes-title {
+    font-weight: bold;
 }
 
 .post > footer {
@@ -40,7 +53,7 @@
     padding: 10px;
     border-top: 2px solid rgb(3, 135, 187);
     
-    .post-likes {
+    .likes {
         padding-left: 40px;
     }
 }
@@ -91,7 +104,10 @@
     background: skyblue;
     border: 2px solid black;
     border-radius: 10px;
+    justify-content: center;
+    box-shadow: -3px 3px 5px black;
     padding: 20px;
+    justify-items: center;
 }
 
 section.post-details {
@@ -103,13 +119,31 @@ section.post-details {
     font-weight: 700;
     line-height: 3rem;
     color: black;
+    text-align: center;
+    padding: 20px;
+    text-shadow: -2px 2px 1px rgb(3, 135, 187);
 }
 
-.post-topic {
-    color: salmon;
+.post-body {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgb(3, 135, 187);
+    padding: 20px;
+    margin: 10px;
+    width: 900px;
 }
 
 .post-info {
-    color: salmon;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
 }
 
+.post-info-title {
+    font-weight: bold;
+    padding: 5px;
+}
+
+section.post-details div {
+    padding: 20px;
+}

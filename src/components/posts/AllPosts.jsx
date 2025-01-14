@@ -40,7 +40,7 @@ export const AllPosts = () => {
         <PostFilter allTopics={allTopics} setSearchTerm={setSearchTerm} setSelectTopic={setSelectTopic} />
             <article className="posts">
                 {filteredPosts.map((post) => {
-                    return <Link to={`/posts/${post.id}`} key={post.id} ><Post post={post} key={post.id} /></Link>
+                    return <Post post={post} key={post.id} />
                 })}
             </article>
 
