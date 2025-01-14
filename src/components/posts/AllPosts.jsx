@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-import { getAllTopics } from "../services/topicService"
+import { getAllTopics } from "../../services/topicService"
 import { PostFilter } from "./PostFilter"
 import { Post } from "./Post"
-import { getLikedPosts } from "../services/userLikedPostsService"
+import { getLikedPosts } from "../../services/userLikedPostsService"
 import "./AllPosts.css"
+import { Link } from "react-router-dom"
 
 export const AllPosts = () => {
     const [allPosts, setAllPosts] = useState([])
@@ -39,7 +40,7 @@ export const AllPosts = () => {
         <PostFilter allTopics={allTopics} setSearchTerm={setSearchTerm} setSelectTopic={setSelectTopic} />
             <article className="posts">
                 {filteredPosts.map((post) => {
-                    return <Post post={post} key={post.id} />
+                    return <Link to={`/posts/${post.id}`} key={post.id} ><Post post={post} key={post.id} /></Link>
                 })}
             </article>
 

@@ -87,5 +87,29 @@
     text-shadow: 0 0 3px skyblue;
 }
 
+.post-details {
+    background: skyblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
 
+section.post-details {
+    margin: 20px;
+}
+
+.post-header {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 3rem;
+    color: black;
+}
+
+.post-topic {
+    color: salmon;
+}
+
+.post-info {
+    color: salmon;
+}
 
