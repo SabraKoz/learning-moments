@@ -19,7 +19,7 @@ export const ApplicationViews = () => {
         <Route path="/" element={<><NavBar /><Outlet /></>} >
             <Route path="posts">
                 <Route index element={<AllPosts currentUser={currentUser} />} />
-                <Route path=":postId" element={<PostDetails />} />
+                <Route path=":postId" element={<PostDetails currentUser={currentUser} />} />
             </Route>
         </Route>
     </Routes>

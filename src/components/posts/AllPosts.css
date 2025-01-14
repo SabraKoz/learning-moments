@@ -111,7 +111,7 @@
 }
 
 section.post-details {
-    margin: 20px;
+    margin: 50px;
 }
 
 .post-header {
@@ -146,4 +146,18 @@ section.post-details {
 
 section.post-details div {
     padding: 20px;
+}
+
+.edit-btn, .like-btn {
+    background-color: rgb(3, 135, 187);
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+    
+}
+
+.edit-btn:hover, .like-btn:hover {
+    box-shadow: 0 0 10px purple;
 }

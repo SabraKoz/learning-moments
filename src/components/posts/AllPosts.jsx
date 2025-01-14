@@ -4,7 +4,6 @@ import { PostFilter } from "./PostFilter"
 import { Post } from "./Post"
 import { getLikedPosts } from "../../services/userLikedPostsService"
 import "./AllPosts.css"
-import { Link } from "react-router-dom"
 
 export const AllPosts = () => {
     const [allPosts, setAllPosts] = useState([])
@@ -13,8 +12,12 @@ export const AllPosts = () => {
     const [filteredPosts, setFilteredPosts] = useState([])
     const [selectTopic, setSelectTopic] = useState("")
 
-    useEffect(() => {
+    const getAndSetAllPosts = () => {
         getLikedPosts().then(postArray => { setAllPosts(postArray) })
+    }
+
+    useEffect(() => {
+        getAndSetAllPosts()
         getAllTopics().then(topicArray => { setAllTopics(topicArray) })
     }, [])
 

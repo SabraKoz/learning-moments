@@ -4,7 +4,9 @@
     background-color: skyblue;
     margin: 0;
     width: 100%;
-    padding: 0.5rem;
+    padding: 15px;
+    border-bottom: 3px solid black;
+    font-weight: bold;
   }
 
   .navbar-item {
