@@ -43,8 +43,8 @@ export const PostDetails = ({ currentUser }) => {
         </div>
         <div>
             {currentUser.id === post.userId ? (
-                <button className="edit-btn">Edit Post</button>
-            ) : (<button className="like-btn" onClick={handleLike}>Like</button>)}
+                <button className="btn">Edit Post</button>
+            ) : (<button className="btn" onClick={handleLike}>Like</button>)}
         </div>
     </section>
 }

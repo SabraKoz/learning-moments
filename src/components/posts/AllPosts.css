@@ -12,8 +12,8 @@
 }
 
 .posts {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     margin: 20px;
     align-items: center;
 }
@@ -21,7 +21,6 @@
 .post {
     margin: 20px;
     padding: 20px;
-    width: 800px;
     border: 3px solid black;
     border-radius: 10px;
     background: skyblue;
@@ -50,12 +49,9 @@
 .post > footer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
     border-top: 2px solid rgb(3, 135, 187);
-    
-    .likes {
-        padding-left: 40px;
-    }
 }
 
 .post-filter {
@@ -135,7 +131,6 @@ section.post-details {
 
 .post-info {
     display: flex;
-    margin: 10px;
     padding: 10px;
 }
 
@@ -148,16 +143,44 @@ section.post-details div {
     padding: 20px;
 }
 
-.edit-btn, .like-btn {
+.btn {
     background-color: rgb(3, 135, 187);
     border: 2px solid black;
     border-radius: 5px;
     color: black;
     font-weight: bold;
     padding: 8px;
-    
+    margin: 10px;
 }
 
-.edit-btn:hover, .like-btn:hover {
+.btn:hover {
     box-shadow: 0 0 10px purple;
 }
+
+.new-post-form {
+    background: skyblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    box-shadow: -3px 3px 5px black;
+    padding: 20px;
+    justify-items: center;
+    margin: 50px;
+}
+
+.new-body {
+   width: 500px;
+   height: 25px;
+   border: 2px solid black;
+   border-radius: 5px;
+   margin: 10px;
+   padding: 5px;
+}
+
+.new-title, .topic-dropdown {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+

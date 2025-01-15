@@ -9,5 +9,5 @@ export const createLike = (like) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(like)
-    })
+    }).then((res) => res.json())
 }
