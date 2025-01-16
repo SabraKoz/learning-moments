@@ -2,10 +2,12 @@ import { useEffect, useState } from "react"
 import "./AllPosts.css"
 import { useNavigate, useParams } from "react-router-dom"
 import { getPostById } from "../../services/postService"
-import { createLike } from "../../services/userLikedPostsService"
+import { createLike, unlikePost } from "../../services/userLikedPostsService"
 
 export const PostDetails = ({ currentUser }) => {
     const [post, setPost] = useState([])
+    const [hasLiked, setHasLiked] = useState(false)
+    const [userLikeId, setUserLikeId] = useState(null)
 
     const { postId } = useParams()
 
@@ -15,6 +17,13 @@ export const PostDetails = ({ currentUser }) => {
         getPostById(postId).then(data => {
             const postObj = data[0]
             setPost(postObj)
+
+            const userLike = postObj.userLikedPosts?.find(like => like.userId === currentUser.id)
+
+            setHasLiked(!!userLike)
+            if (userLike) {
+                setUserLikeId(userLike.id)
+            }
         })
     }
 
@@ -29,6 +38,13 @@ export const PostDetails = ({ currentUser }) => {
         }
 
         createLike(newUserLikedPost).then(() => {
+            getAndSetPost()
+            navigate("/posts/favorites")
+        })
+    }
+
+    const handleUnlike = () => {
+        unlikePost(userLikeId).then(() => {
             getAndSetPost()
         })
     }
@@ -46,7 +62,7 @@ export const PostDetails = ({ currentUser }) => {
         <div>
             {currentUser.id === post.userId ? (
                 <button className="btn" onClick={ () => {navigate(`/posts/${postId}/edit`)}}>Edit Post</button>
-            ) : (<button className="btn" onClick={handleLike}>Like</button>)}
+            ) : (hasLiked ? (<button className="btn" onClick={handleUnlike}>Unlike</button>) : (<button className="btn" onClick={handleLike}>Like</button>))}
         </div>
     </section>
 }

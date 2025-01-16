@@ -6,6 +6,7 @@ import { PostDetails } from "../components/posts/PostDetails"
 import { NewPost } from "../components/posts/NewPost"
 import { MyPosts } from "../components/posts/MyPosts"
 import { EditPost } from "../components/posts/EditPost"
+import { FavoritePosts } from "../components/posts/FavoritePosts"
 
 
 export const ApplicationViews = () => {
@@ -23,11 +24,11 @@ export const ApplicationViews = () => {
             <Route path="posts" >
                 <Route index element={<AllPosts currentUser={currentUser} />} />
                 <Route path=":postId" element={<PostDetails currentUser={currentUser} />} />
-                <Route path=":postId/edit" element={<EditPost currentUser={currentUser} />} />
+                <Route path=":postId/edit" element={<EditPost />} />
             </Route>
             <Route path="newPost" element={<NewPost currentUser={currentUser} />} />
             <Route path="myPosts" element={<MyPosts currentUser={currentUser} />} />
-            <Route path="favorites" element={<></>} />
+            <Route path="favorites" element={<FavoritePosts currentUser={currentUser} />} />
             <Route path="profile" element={<></>} />
         </Route>
     </Routes>

@@ -26,18 +26,21 @@ export const NewPost = ({ currentUser }) => {
         event.preventDefault()
 
         const newPost = {
-            title,
-            body,
+            title: title,
+            body: body,
             date: new Date(),
             topicId: parseInt(selectTopic),
             userId: currentUser.id
         }
-        
-        createNewPost(newPost).then(() => {
-            resetForms()
-            navigate(`/myPosts`)
-        })
-        
+
+        if (title && body && selectTopic) {
+            createNewPost(newPost).then(() => {
+                resetForms()
+                navigate(`/myPosts`)
+            })
+        } else {
+            window.alert("Please complete form")
+        }  
     }
 
     return (

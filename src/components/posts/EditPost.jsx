@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react"
 import "./AllPosts.css"
-import { getPostById } from "../../services/postService"
+import { getPostById, updatePost } from "../../services/postService"
 import { getAllTopics } from "../../services/topicService"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
-export const EditPost = ({ currentUser }) => {
+export const EditPost = () => {
     const [post, setPost] = useState([])
     const [topics, setTopics] = useState([])
 
     const { postId } = useParams()
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         getPostById(postId).then(data => {
@@ -28,8 +30,20 @@ export const EditPost = ({ currentUser }) => {
         setPost(postCopy)
     }
 
-    const handleSave = () => {
+    const handleSave = (event) => {
+        event.preventDefault()
+        const editedPost = {
+            id: post.id,
+            title: post.title,
+            body: post.body,
+            date: new Date(),
+            topicId: parseInt(post.topicId),
+            userId: post.userId
+        }
 
+        updatePost(editedPost).then(() => {
+            navigate(`/myPosts`)
+        })
     }
 
     return (
@@ -41,7 +55,7 @@ export const EditPost = ({ currentUser }) => {
                     <input 
                         type="text" 
                         name="title" 
-                        value={post?.title ? post.title : ''}
+                        value={post.title ? post.title : ''}
                         onChange={handleInputChange}
                         required 
                         className="new-title"/>
@@ -52,7 +66,8 @@ export const EditPost = ({ currentUser }) => {
                     <label>Topic: </label>
                     <select 
                         className="topic-dropdown" 
-                        value={post?.topicId}
+                        name="topicId"
+                        value={post.topicId}
                         onChange={handleInputChange}>
                         <option value="" className="default-dropdown">Select Topic</option>
                         {topics.map(topic => {
@@ -67,7 +82,7 @@ export const EditPost = ({ currentUser }) => {
                     <input 
                         type="text" 
                         name="body" 
-                        value={post?.body ? post.body : ''}
+                        value={post.body ? post.body : ''}
                         onChange={handleInputChange}
                         required 
                         className="new-body" />
