@@ -39,7 +39,7 @@ export const PostDetails = ({ currentUser }) => {
 
         createLike(newUserLikedPost).then(() => {
             getAndSetPost()
-            navigate("/posts/favorites")
+            navigate("/favorites")
         })
     }
 
