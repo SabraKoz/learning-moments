@@ -15,7 +15,7 @@ export const MyPosts = ({ currentUser }) => {
 
     useEffect(() => {
         getAndSetUserPosts()
-    }, [])
+    }, [currentUser])
 
     const handleDeletePost = (postId) => {
         deletePost(postId).then(() => {
