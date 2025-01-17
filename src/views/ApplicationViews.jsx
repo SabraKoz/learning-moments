@@ -23,6 +23,7 @@ export const ApplicationViews = () => {
 
     return <Routes>
         <Route path="/" element={<><NavBar currentUser={currentUser} /><Outlet /></>} >
+            <Route index element={<AllPosts currentUser={currentUser} />} />
             <Route path="posts" >
                 <Route index element={<AllPosts currentUser={currentUser} />} />
                 <Route path=":postId" element={<PostDetails currentUser={currentUser} />} />
