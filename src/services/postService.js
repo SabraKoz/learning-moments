@@ -23,8 +23,7 @@ export const updatePost = (post) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(post)
-    }
-    )
+    })
 }
 
 export const deletePost = (postId) => {

@@ -8,6 +8,7 @@ import { MyPosts } from "../components/posts/MyPosts"
 import { EditPost } from "../components/posts/EditPost"
 import { FavoritePosts } from "../components/posts/FavoritePosts"
 import { Profile } from "../components/users/Profile"
+import { EditProfile } from "../components/users/EditProfile"
 
 
 export const ApplicationViews = () => {
@@ -33,7 +34,7 @@ export const ApplicationViews = () => {
             <Route path="profile" >
                 <Route index element={<Profile currentUser={currentUser} />} />
                 <Route path=":userId" element={<Profile currentUser={currentUser} />} />
-                <Route path=":userId/edit" />
+                <Route path=":userId/edit" element={<EditProfile currentUser={currentUser} />} />
             </Route>
         </Route>
     </Routes>
