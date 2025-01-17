@@ -55,7 +55,7 @@ export const PostDetails = ({ currentUser }) => {
         <div><span className="post-info-title">Topic: </span>{post.topic?.name}</div>
         <div className="post-body">{post.body}</div>
         <div className="post-info">
-        <div><span className="post-info-title">Author: </span><Link to={`/profile/${post.user?.id}`}>{post.user?.name}</Link></div>
+        <div><span className="post-info-title">Author: </span><Link to={`/profile/${post.user?.id}`} className="author-link" >{post.user?.name}</Link></div>
         <div><span className="post-info-title">Post Date: </span>{post.date}</div>
         <div><span className="post-info-title">Likes: </span>{post.userLikedPosts?.length}</div>
         </div>

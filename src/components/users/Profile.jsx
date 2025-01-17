@@ -18,15 +18,15 @@ export const Profile = ({ currentUser }) => {
     }, [userId])
 
     return (
-        <section>
-            <header>{user?.name}</header>
+        <section className="profile-details">
+            <header className="profile-header">{user?.name}</header>
             <div>
-                <div>Cohort: {user.cohort}</div>
-                <div>Number of Posts: {user.posts?.length}</div>
+                <div className="profile-info"><span className="profile-title">Cohort: </span>{user.cohort}</div>
+                <div className="profile-info"><span className="profile-title">Number of Posts: </span>{user.posts?.length}</div>
             </div>
             <div>
                 {currentUser.id === user?.id ? (
-                    <button onClick={() => {navigate(`/profile/${currentUser.id}/edit`)}}>Edit Profile</button>
+                    <button className="btn" onClick={() => {navigate(`/profile/${currentUser.id}/edit`)}}>Edit Profile</button>
                 ) : ("")}
             </div>
         </section>

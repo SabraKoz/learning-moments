@@ -184,3 +184,13 @@ section.post-details div {
     padding: 5px;
 }
 
+.author-link {
+    text-decoration: none;
+    color: black;  
+    text-shadow: 0 0 3px rgb(3, 135, 187);  
+}
+
+.author-link:hover {
+    color: purple;
+}
+

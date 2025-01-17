@@ -1,0 +1,52 @@
+.profile-details {
+    background: skyblue;
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-content: center;
+    box-shadow: -3px 3px 5px black;
+    padding: 20px;
+    justify-items: center;
+    margin: 50px;
+}
+
+.profile-header {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 3rem;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    text-shadow: -2px 2px 1px rgb(3, 135, 187);
+}
+
+.profile-info {
+    margin: 20px;
+    padding: 10px;
+}
+
+.profile-title {
+    font-weight: bold;
+}
+
+.new-profile {
+    margin: 10px;
+    padding: 10px;
+}
+
+.new-info {
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: rgb(3, 135, 187);
+    border: 2px solid black;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    padding: 8px;
+    margin: 10px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px purple;
+}

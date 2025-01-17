@@ -38,33 +38,35 @@ export const EditProfile = ({ currentUser }) => {
     }
 
     return (
-        <section>
-            <h1>Edit Profile</h1>
+        <section className="profile-details">
+            <h1 className="profile-header">Edit Profile</h1>
             <fieldset>
-                <div>
-                    <label>Name: </label>
+                <div className="new-profile">
+                    <label className="profile-title">Name: </label>
                     <input
                         type="text"
                         name="name"
                         value={userEdit.name ? userEdit.name : ''}
                         onChange={handleInputChange}
                         required
+                        className="new-info"
                         />
                 </div>
             </fieldset>
             <fieldset>
-                <div>
-                    <label>Cohort: </label>
+                <div className="new-profile">
+                    <label className="profile-title">Cohort: </label>
                     <input
                         type="text"
                         name="cohort"
                         value={userEdit.cohort ? userEdit.cohort : ''}
                         onChange={handleInputChange}
                         required
+                        className="new-info"
                         />
                 </div>
             </fieldset>
-            <button type="submit" onClick={handleSaveChanges}>Save Changes</button>
+            <button type="submit" className="btn" onClick={handleSaveChanges}>Save Changes</button>
         </section>
     )
 }
